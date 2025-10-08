@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # match your local version
+          python-version: '3.12'  # match your local Python version
 
       - name: Install dependencies
         run: |
@@ -27,4 +27,4 @@ jobs:
         run: |
           python -m pytest tests/ --maxfail=1 --disable-warnings
         env:
-          PYTHONPATH: ${{ github.workspace }}
+          PYTHONPATH: ${{ github.workspace }}  # ensures streak.py is discoverable
